@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+<title>Student Management System</title>
+</head>
+
+<body>
+<!-- nav bar start -->
+<nav>
+        <a th:href="@{/students}">Student Management</a>
+</nav>
+<!-- nav bar end -->
+
+<h1> Create New Student </h1>
+		<div>
+			<form th:action="@{/students}" th:object = "${student}" method="POST">
+		
+				<label> Student First Name </label>
+				<input type = "text" name = "firstName" th:field = "*{firstName}">
+						
+							<label> Student Last Name </label>
+							<input type = "text" name = "lastName" th:field = "*{lastName}">
+						
+							<label> Student Email </label>
+							<input type = "text" name = "email" th:field = "*{email}">
+						
+							<button type="submit" >Submit</button>
+				</form>
+		</div>
+</body>
+</html>

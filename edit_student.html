@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+<title>Student Management System</title>
+</head>
+
+<body>
+	
+<!-- nav bar start -->
+<nav>
+  <a th:href="@{/students}">Student Management</a>
+</nav>
+<!-- nav bar end -->
+
+	<div>
+			
+	<h1> Update Student </h1>
+	<form th:action="@{/students/{id} (id=${student.id})}" th:object = "${student}" method="POST">
+		<label> Student First Name </label>
+		<input type = "text" name = "firstName" th:field = "*{firstName}">
+	
+		<label> Student Last Name </label>
+		<input type = "text" name = "lastName" th:field = "*{lastName}">
+			
+		<label> Student Email </label>
+		<input type = "text" name = "email" th:field = "*{email}">
+		</div>
+						
+		<div>
+		<button type="submit">Submit</button>
+		</div>
+	</form>
+</body>
+</html>
